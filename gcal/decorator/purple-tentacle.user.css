@@ -1,0 +1,50 @@
+/* ==UserStyle==
+@name        Google Calendar Decorator: Purple Tentacle
+@namespace   bannmann.jens
+@version     0.1.0
+@updateURL   https://raw.githubusercontent.com/bannmann/user-styles/master/gcal/decorator/purple-tentacle.user.css
+@license     CC-BY-NC-SA-4.0
+@author      Jens Bannmann <jens.b@web.de>
+@advanced text identifier-current "Unique part of current calendar event DIV styles (recommended: color in 'rgb(147, 70, 199)' syntax)" "rgb(147, 70, 199)"
+@advanced text identifier-past "Unique part of past calendar event DIV styles (recommended: color in 'rgb(201, 163, 227)' syntax)" "rgb(201, 163, 227)"
+@advanced text identifier-past-allday "Unique part of past all-day calendar event DIV styles (recommended: color in 'rgb(223, 200, 238)' syntax)" "rgb(223, 200, 238)"
+@preprocessor uso
+==/UserStyle== */
+@-moz-document domain("calendar.google.com") {
+	div[style*="/*[[identifier-current]]*/"][role=button],
+    div[style*="/*[[identifier-past]]*/"][role=button],
+    div[style*="/*[[identifier-past-allday]]*/"][role=button]{
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat !important;
+	}
+
+   	div[style*="/*[[identifier-current]]*/"][role=button],
+    div[style*="/*[[identifier-past]]*/"][role=button]{
+		color: white;
+	}
+
+	div[data-column-index] div[style*="/*[[identifier-current]]*/"][role=button],
+	div[data-column-index] div[style*="/*[[identifier-past]]*/"][role=button] {
+		background-image: url(https://svgshare.com/i/H2Q.svg);
+	}
+
+    div[data-column-index] div[style*="/*[[identifier-past]]*/"][role=button] {
+		background-blend-mode: overlay;
+	}
+
+	div[data-disable-all-day-creation] div[style*="/*[[identifier-current]]*/"][role=button],
+	div[data-disable-all-day-creation] div[style*="/*[[identifier-past-allday]]*/"][role=button] {
+		background-image: url(https://svgshare.com/i/H20.svg);
+		background-position: center right;
+	}
+    
+	div[data-disable-all-day-creation] div[style*="/*[[identifier-past]]*/"][role=button],
+	div[data-disable-all-day-creation] div[style*="/*[[identifier-past-allday]]*/"][role=button] {
+		background-blend-mode: overlay;
+	}
+
+	div[style*="/*[[identifier-current]]*/"][role=button] * {
+		color: white !important;
+	}
+}

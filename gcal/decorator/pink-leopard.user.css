@@ -1,0 +1,31 @@
+/* ==UserStyle==
+@name        Google Calendar Decorator: Pink Leopard
+@namespace   bannmann.jens
+@version     0.1.0
+@updateURL   https://raw.githubusercontent.com/bannmann/user-styles/master/gcal/decorator/pink-leopard.user.css
+@license     CC-BY-NC-SA-4.0
+@author      Jens Bannmann <jens.b@web.de>
+@advanced text identifier-current "Unique part of current calendar event DIV styles (recommended: color in 'rgb(255, 0, 230)' syntax)" "rgb(255, 0, 230)"
+@advanced text identifier-past "Unique part of past calendar event DIV styles (recommended: color in 'rgb(230, 128, 220)' syntax)" "rgb(230, 128, 220)"
+@preprocessor uso
+==/UserStyle== */
+@-moz-document domain("calendar.google.com") {
+	div[style*="/*[[identifier-current]]*/"][role=button],
+	div[style*="/*[[identifier-past]]*/"][role=button] {
+		background: url(https://www.myfreetextures.com/wp-content/uploads/2011/06/furjaguar-900x900.jpg) fixed !important;
+	}
+
+   	div[style*="/*[[identifier-current]]*/"][role=button] {
+		background-blend-mode: overlay;
+		background-color: hsla(306, 100%, 40%, .5) !important;
+	}
+
+	div[style*="/*[[identifier-past]]*/"][role=button] {
+		background-blend-mode: lighten;
+		background-color: hsla(306, 100%, 90%, .9) !important;
+	}
+
+    div[style*="/*[[identifier-current]]*/"][role=button] * {
+		color: white !important;
+	}	
+}
